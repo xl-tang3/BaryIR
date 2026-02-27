@@ -8,12 +8,12 @@
 
 
 ## Main Figs
-<img src="figs/baryteaser.png" width="400"> <img src = "figs/WBvis1.png" width="400">
+<img src="figs/baryteaser.png" width="500"> <img src = "figs/WBvis1.png" width="500">
 
-<img src = "figs/pipeline.png" width="800"> 
+<img src = "figs/pipeline.png" width="1000"> 
 
 #### Role of WB and residual at image level
-<img src = "figs/testvis.png" width="800"> 
+<img src = "figs/testvis.png" width="1000"> 
 
 
 
