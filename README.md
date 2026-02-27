@@ -93,8 +93,10 @@ The testing data should be placed in the ```test``` directory wherein each task 
     │   ├───low
     │   └───high
     └───derain
-
-
+    │   └───Rain100L
+    │        ├───input
+    │        └───target
+```
 ## Citation
 ```
 @article{tang2026learning,
@@ -104,8 +106,4 @@ The testing data should be placed in the ```test``` directory wherein each task 
   year={2026}
   }
 
-```
-    │   └───Rain100L
-    │        ├───input
-    │        └───target
 ```
