@@ -8,12 +8,12 @@
 
 
 ## Main Figs
-<img src="figs/baryteaser.png" width="450"> <img src = "figs/WBvis1.png" width="450">
+<img src="figs/baryteaser.png" width="400"> <img src = "figs/WBvis1.png" width="400">
 
-<img src = "figs/pipeline.png" width="1000"> 
+<img src = "figs/pipeline.png" width="800"> 
 
 #### Takeaway: Role of WB and residual at image level
-<img src = "figs/testvis.png" width="1000"> 
+<img src = "figs/testvis.png" width="800"> 
 The WB difference maps (R3-R1) primarily capture common image structures and contents. Conversely, the residual difference maps (R3-R2) are spatially-adaptive, concentrating on the degradation-specific pixels that are heavily affected by degradations.
 
 
