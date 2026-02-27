@@ -103,7 +103,6 @@ The testing data should be placed in the ```test``` directory wherein each task 
   author={Tang, Xiaole and Gu, Xiang and He, Xiaoyi and Hu, Xin and Sun, Jian},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
   title={Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration}, 
-  year={2026}
-  }
+  year={2026}}
 
 ```
