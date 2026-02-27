@@ -1,4 +1,4 @@
-# (TPAMI 2026) Degradation-Aware Residual-Conditioned Optimal Transport for All-in-One Image Restoration
+# (TPAMI 2026) BaryIR: Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2602.23169)
 
 <hr />
