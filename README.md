@@ -7,8 +7,7 @@
 <hr />
 
 ##  Setup
-This repository is built in PyTorch 2.1.1 and tested on Ubuntu 18.04 environment (Python3.8, CUDA11.8). For super-resolution, the LR images undergo bicubic rescaling to match the dimensions of their respective high-resolution counterparts.
-Follow these instructions.
+This repository is built in PyTorch 2.1.1 and tested on an Ubuntu 18.04 environment (Python3.8, CUDA11.8). 
 ###  Dependencies Installation
 
 
