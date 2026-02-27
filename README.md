@@ -1,4 +1,4 @@
-# (TPAMI 2026) BaryIR: Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
+# (TPAMI 2026) Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2602.23169)
 
 <hr />
@@ -93,6 +93,18 @@ The testing data should be placed in the ```test``` directory wherein each task 
     │   ├───low
     │   └───high
     └───derain
+
+
+## Citation
+```
+@article{tang2026learning,
+  author={Tang, Xiaole and Gu, Xiang and He, Xiaoyi and Hu, Xin and Sun, Jian},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration}, 
+  year={2026}
+  }
+
+```
     │   └───Rain100L
     │        ├───input
     │        └───target
