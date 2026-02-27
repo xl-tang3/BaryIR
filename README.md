@@ -6,6 +6,18 @@
 > **Abstract:** *Despite substantial advances in all-in-one image restoration for addressing diverse degradations within a unified model, existing methods remain vulnerable to out-of-distribution degradations, thereby limiting their generalization in real-world scenarios. To tackle the challenge, this work is motivated by the intuition that multisource degraded feature distributions are induced by different degradation-specific shifts from an underlying degradation-agnostic distribution, and recovering such a shared distribution is thus crucial for achieving generalization across degradations. With this insight, we propose BaryIR, a representation learning framework that aligns multisource degraded features in the Wasserstein barycenter (WB) space, which models a degradation-agnostic distribution by minimizing the average of Wasserstein distances to multisource degraded distributions. We further introduce residual subspaces, whose embeddings are mutually contrasted while remaining orthogonal to the WB embeddings. Consequently, BaryIR explicitly decouples two orthogonal spaces: a WB space that encodes the degradation-agnostic invariant contents shared across degradations, and residual subspaces that adaptively preserve the degradation-specific knowledge. This disentanglement mitigates overfitting to in-distribution degradations and enables adaptive restoration grounded on the degradation-agnostic shared invariance. Extensive experiments demonstrate that BaryIR performs competitively against state-of-the-art all-in-one methods. Notably, BaryIR generalizes well to unseen degradations (e.g., types and levels) and shows remarkable robustness in learning generalized features, even when trained on limited degradation types and evaluated on real-world data with mixed degradations.* 
 <hr />
 
+
+### Main Figs
+<img src = "figs/baryteaser.png"> 
+<img src = "figs/pipeline.png"> 
+<img src = "figs/WBvis.png">
+
+#### Role of WB and residual at image level
+<img src = "figs/testvis.png"> 
+
+
+
+
 ##  Setup
 This repository is built in PyTorch 2.1.1 and tested on an Ubuntu 18.04 environment (Python3.8, CUDA11.8). 
 ###  Dependencies Installation
@@ -52,6 +64,7 @@ Dehazing: [RESIDE](https://sites.google.com/view/reside-dehaze-datasets/reside-v
 Deblurring: [GoPro](https://seungjunnah.github.io/Datasets/gopro.html) 
 
 Low-light enhancement: [LOLv1](https://github.com/caiyuanhao1998/Retinexformer) 
+
 
 The training data should be placed in ``` data/Train/{task_name}``` directory where ```task_name``` can be Denoise, Derain, Dehaze or any single degradation.
 After placing the training data the directory structure would be as follows:
@@ -117,7 +130,18 @@ CUDA_VISIBLE_DEVICES=0,1,2 torchrun \
   --resume=checkpoint/model_allBaryNet128__58_1.0.pt \
   --num_sources=5
 ```
+### Results
 
+Performance results of the BaryIR framework trained under the all-in-one setting.
+
+<details>
+<summary><strong>3D and 5D Comparison</strong> (click to expand) </summary>
+
+<img src = "figs/5Dquant.png"> 
+</details>
+
+#### 5D visual examples
+<img src = "figs/5Dcompare.png"> 
 
 ## Citation
 ```
