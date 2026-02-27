@@ -1171,6 +1171,7 @@ class BaryNet(nn.Module):
         source_latent = self.latent(inp_enc_level4)
         source_latent = self.LN(source_latent)
 
+        # source_latent = torch.zeros_like(source_latent)
         bary_latent = self.barylatent(source_latent)
         bary_latent = self.LN(bary_latent)
         res_bary = source_latent - bary_latent
@@ -1232,12 +1233,19 @@ class BaryNet(nn.Module):
 
 
 class Potentials(nn.Module):
-    def __init__(self, num_potentials, channels=384, size=128):
+    def __init__(self, num_potentials, channels=384, size=128): 
         super(Potentials, self).__init__()
         self.num_potentials = num_potentials
         self.input_channels = channels
-        # self.num_features = int(size * size / 2)
-        self.num_features = int(channels * (size / 32) * (size / 32))
+        
+        input_spatial = size // 8 
+        
+   
+        conv_out_size = ((input_spatial + 2 * 1 - 4) // 4) + 1  
+        
+
+        self.num_features = channels * conv_out_size * conv_out_size
+        
         self.potentials = nn.ModuleList(
             [self._build_potentials(self.input_channels, self.num_features) for _ in range(num_potentials)])
         for m in self.modules():
@@ -1251,27 +1259,11 @@ class Potentials(nn.Module):
         return nn.Sequential(
 
             # # state size. (256) x 16 x 16
-            nn.Conv2d(in_channels=input_channels, out_channels=input_channels, kernel_size=4, stride=4, padding=1,
+            nn.Conv2d(in_channels=input_channels, out_channels=input_channels, kernel_size=4, stride=4,groups=4, padding=1,
                       bias=False),
             # nn.BatchNorm2d(512),
             nn.LeakyReLU(0.2, inplace=True),
 
-            # # # state size. (512) x 16 x 16
-            # # nn.Conv2d(in_channels=input_channels, out_channels=512, kernel_size=4, stride=2, padding=1, bias=False),
-            # # # nn.InstanceNorm2d(512),
-            # # nn.LeakyReLU(0.2, inplace=True),
-            # nn.Conv2d(in_channels=input_channels, out_channels=input_channels, kernel_size=3, stride=1, padding=1, bias=False),
-            # # nn.BatchNorm2d(512),
-            # nn.LeakyReLU(0.2, inplace=True),
-            # # # state size. (512) x 8 x 8
-            # # nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, stride=1, padding=1, bias=False),
-            # # # nn.BatchNorm2d(512),
-            # # nn.LeakyReLU(0.2, inplace=True),
-
-            # # # state size. (512) x 8 x 8
-            # nn.Conv2d(in_channels=input_channels, out_channels=input_channels, kernel_size=4, stride=2, padding=1, bias=False),
-            # # nn.InstanceNorm2d(512),
-            # nn.LeakyReLU(0.2, inplace=True),
 
             nn.Flatten(),
             nn.Linear(num_fea, int(num_fea / 4)),

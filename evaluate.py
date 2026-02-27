@@ -10,7 +10,7 @@ import os
 import lpips
 import torchvision.transforms as transforms
 from PIL import Image
-from pytorch_fid import fid_score
+import fid_score
 
 
 
@@ -93,6 +93,7 @@ def calculate_evaluation_floder(path1,path2):
 
         p = psnr(im1, im2, data_range=255)
         pp += p
+        print(p)
         s = ssim(im1, im2, channel_axis=2, data_range=255)
         ss += s
         l=lpips_model(im2_tensor,im1_tensor)
@@ -116,14 +117,14 @@ def calculate_evaluation_floder(path1,path2):
     return(pp/len(out_list), ss/len(out_list), pmax, smax, pmin, smin)
 
 if __name__ =='__main__':
-    real_images_folder = '/home/sherlock/RCOT/results/lowlight/OUT'
-    generated_images_folder = '/home/sherlock/RCOT/results/lowlight/TAR'
+    real_images_folder = './results/JPEG/OUT/'
+    generated_images_folder = './results/JPEG/TAR/'
 
-    inception_model = torchvision.models.inception_v3(pretrained=True)
+    # inception_model = torchvision.models.inception_v3(pretrained=True)
     fid_value = fid_score.calculate_fid_given_paths([real_images_folder, generated_images_folder], batch_size=50,
-                                                    device='cuda', dims=2048, num_workers=0)
+                                                    device='cuda', dims=2048, num_workers=16)
     print('FID value:', fid_value)
 
-    psnr, ssim, pmax, smax, pmin, smin = +calculate_evaluation_floder(real_images_folder, generated_images_folder)
+    psnr, ssim, pmax, smax, pmin, smin = calculate_evaluation_floder(real_images_folder, generated_images_folder)
     print("PSNR: Averyge {:.5f},   best {:.5f},   worst {:.5f}".format(psnr, pmax, pmin))
     print("SSIM: Averyge {:.5f},   best {:.5f},   worst {:.5f}".format(ssim, smax, smin))
