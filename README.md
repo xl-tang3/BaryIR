@@ -121,7 +121,7 @@ The testing data should be placed in the ```test``` directory wherein each task 
 python tester_bary.py
 ```
 > [!NOTE]
-> **Efficiency Note:** while BaryIR offers efficient inference, training is computationally intensive given the large-scale mixed datasets involved.
+> **Efficiency Note:** While BaryIR offers efficient inference, training is computationally intensive given the large-scale mixed datasets involved. Please **configure your data paths and parameters** according to your specific tasks and hardware availability.
 
 ## Training
 
