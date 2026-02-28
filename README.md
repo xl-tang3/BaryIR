@@ -1,4 +1,10 @@
 # (TPAMI 2026) Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
+
+## Updates
+- [x] We released the codes for 3D/5D all-in-one training and evaluation.
+- [x] 🎉🎉🎉 Our BaryIR paper was accepted by TPAMI 2026 🎉🎉🎉
+- [ ] Upload pretrained models and other training scripts
+
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2602.23169)
 
 <hr />
