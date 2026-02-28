@@ -130,7 +130,7 @@ For example, the cmds for non-DDP and  DDP training BaryIR are as follows:
 ### Non-DDP
 #### 3D
 ```
-python trainer_bary.py --batchSize=3 --nEpochs=57 --pairnum=10000000 --Sigma=10000 --sigma=1 --de_type derain dehaze denoise_15 denoise_25 denoise_50 --patch_size=128 --type all --gpus=0 --backbone=BaryNet --step=50 --resume=checkpoint/model_allBaryNet128__56_1.0.pt --num_source=3
+python trainer_bary.py --batchSize=3 --nEpochs=56 --pairnum=10000000 --Sigma=10000 --sigma=1 --de_type derain dehaze denoise_15 denoise_25 denoise_50 --patch_size=128 --type all --gpus=0 --backbone=BaryNet --step=50 --resume=checkpoint/model_allBaryNet128__56_1.0.pt --num_source=3
 ```
 #### 5D
 ```
