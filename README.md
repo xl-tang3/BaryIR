@@ -127,11 +127,16 @@ python tester_bary.py
 
 For example, the cmds for non-DDP and  DDP training BaryIR are as follows:
 
-#### Non-DDP
+### Non-DDP
+#### 3D
 ```
-python trainer_bary.py --batchSize=3 --nEpochs=57 --pairnum=10000000 --Sigma=10000 --sigma=1 --de_type derain dehaze lowlight denoise_25 deblur --patch_size=128 --type all --gpus=5 --backbone=BaryNet --step=31 --resume=checkpoint/model_allBaryNet128__57_1.0.pth --num_source=5
+python trainer_bary.py --batchSize=3 --nEpochs=57 --pairnum=10000000 --Sigma=10000 --sigma=1 --de_type derain dehaze denoise_15 denoise_25 denoise_50 --patch_size=128 --type all --gpus=0 --backbone=BaryNet --step=50 --resume=checkpoint/model_allBaryNet128__56_1.0.pt --num_source=3
 ```
-#### DDP
+#### 5D
+```
+python trainer_bary.py --batchSize=3 --nEpochs=57 --pairnum=10000000 --Sigma=10000 --sigma=1 --de_type derain dehaze lowlight denoise_25 deblur --patch_size=128 --type all --gpus=0 --backbone=BaryNet --step=31 --resume=checkpoint/model_allBaryNet128__57_1.0.pt --num_source=5
+```
+### DDP (5D as an example)
 ```
 CUDA_VISIBLE_DEVICES=0,1,2 torchrun \
   --nproc_per_node=3 \
