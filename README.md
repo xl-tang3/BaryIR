@@ -116,6 +116,13 @@ The testing data should be placed in the ```test``` directory wherein each task 
     │        └───target
 ```
 
+## Inference
+```
+python tester_bary.py
+```
+> [!NOTE]
+> **Efficiency Note:** while BaryIR offers efficient inference, training is computationally intensive given the large-scale mixed datasets involved.
+
 ## Training
 
 For example, the cmds for non-DDP and  DDP training BaryIR are as follows:
