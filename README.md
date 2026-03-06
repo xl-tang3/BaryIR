@@ -171,7 +171,7 @@ Performance results of the BaryIR framework trained under the all-in-one setting
 ## Citation
 ```
 @article{tang2026learning,
-  author={Tang, Xiaole and Gu, Xiang and He, Xiaoyi and Hu, Xin and Sun, Jian},
+  author={Tang, Xiaole and He, Xiaoyi and Xu, Jiayi and Gu, Xiang and Sun, Jian},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
   title={Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration}, 
   year={2026}}
