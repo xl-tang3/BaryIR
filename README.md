@@ -1,4 +1,4 @@
-# (TPAMI 2026) Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
+## (TPAMI 2026) Learning Continuous Wasserstein Barycenter Space for Generalized All-in-One Image Restoration
 
 ## Updates
 - [x] We released the codes for 3D/5D all-in-one training and evaluation.
