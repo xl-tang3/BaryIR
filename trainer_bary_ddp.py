@@ -374,9 +374,9 @@ def train(training_data_loader, BaryIR_optimizer, Pots_optimizer, BaryIR, Pots, 
                     potential_loss_val += Pots(bary_latent_slice_i, source_id_i - 2).squeeze()
 
                 if source_id_i < 3:
-                    bary_loss += Lambda[0] * (mse_loss + 0.05 * (ort_loss + contra_loss) - potential_loss_val)
+                    bary_loss += Lambda[0] * (mse_loss + 0.02 * (ort_loss + contra_loss) - potential_loss_val)
                 else:
-                    bary_loss += Lambda[source_id_i - 2] * (mse_loss + 0.05 * (ort_loss + contra_loss) - potential_loss_val)
+                    bary_loss += Lambda[source_id_i - 2] * (mse_loss + 0.02 * (ort_loss + contra_loss) - potential_loss_val)
 
         BaryIR_train_loss = bary_loss / out_restored.shape[0] + opt.Sigma * l1_loss
 
