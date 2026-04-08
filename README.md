@@ -116,8 +116,8 @@ The testing data should be placed in the ```test``` directory wherein each task 
     │        └───target
 ```
 
-###  Pretrained weights for 3- and 5-degradation benchmarks
-[Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=drive_link))
+##  Pretrained weights for 3- and 5-degradation benchmarks
+[Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=drive_link)
 
 ## Inference
 ```
