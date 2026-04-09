@@ -117,7 +117,7 @@ The testing data should be placed in the ```test``` directory wherein each task 
 ```
 
 ##  Pretrained weights for 3- and 5-degradation benchmarks
-[Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=sharing)
+We provide the 3D/5D [Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=sharing) based on the backbone Restormer.
 
 
 ## Inference
