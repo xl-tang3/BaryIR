@@ -3,7 +3,7 @@
 ## Updates
 - [x] We released the codes for 3D/5D all-in-one training and evaluation.
 - [x] 🎉🎉🎉 Our BaryIR paper was accepted by TPAMI 2026 🎉🎉🎉
-- [ ] Upload pretrained models and other training scripts
+- [x] Upload pretrained models and other training scripts
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/pdf/2602.23169)
 
@@ -117,7 +117,8 @@ The testing data should be placed in the ```test``` directory wherein each task 
 ```
 
 ##  Pretrained weights for 3- and 5-degradation benchmarks
-[Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=drive_link)
+[Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=sharing)
+
 
 ## Inference
 ```
