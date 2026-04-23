@@ -14,26 +14,22 @@ parser = argparse.ArgumentParser(description="PyTorch SRResNet Eval")
 parser.add_argument("--cuda", action="store_true", help="use cuda?")
 parser.add_argument("--degset", default="./data/test/derain/Rain100L/input/", type=str, help="degraded data")
 parser.add_argument("--tarset", default="./data/test/derain/Rain100L/target/", type=str, help="target data")
-# # parser.add_argument("--degset", default="./data/test/JPEG/bsds500/color/qf_20/", type=str, help="degraded data")
-# parser.add_argument("--tarset", default="./data/test/refimgs/", type=str, help="target data")
-# parser.add_argument("--degset", default="./data/test/dehaze/input/", type=str, help="degraded data")
-# parser.add_argument("--tarset", default="./data/test/dehaze/target/", type=str, help="target data")
-# parser.add_argument("--degset", default="./data/test/lowlight/eval15/low/", type=str, help="degraded data")
-# parser.add_argument("--tarset", default="./data/test/lowlight/eval15/high/", type=str, help="target data")
-
-# parser.add_argument("--degset", default="./data/test/deblur/input/", type=str, help="degraded data")
-# parser.add_argument("--tarset", default="./data/test/deblur/target/", type=str, help="target data")
-
-# parser.add_argument("--save", default="./results/lowlight/OUT/", type=str, help="savepath, Default: results")
-# parser.add_argument("--savetar", default="./results/lowlight/TAR/", type=str, help="savepath, Default: targets"
-
 parser.add_argument("--save", default="./results/derain/OUT/", type=str, help="savepath, Default: results")
 parser.add_argument("--savetar", default="./results/derain/TAR/", type=str, help="savepath, Default: targets")
 
-parser.add_argument("--model", default="./checkpoint/model_allBaryNet128__60_1.0.pth", type=str, help="model path")
-# parser.add_argument("--saveres", default="./results/rain/RES/", type=str, help="savepath, Default: residual")
 
-parser.add_argument("--gpus", default="2", type=str, help="gpu ids")
+# parser.add_argument("--degset", default="./data/test/lowlight/eval15/low/", type=str, help="degraded data")
+# parser.add_argument("--tarset", default="./data/test/lowlight/eval15/high/", type=str, help="target data")
+
+
+# parser.add_argument("--degset", default="./data/test/deblur/input/", type=str, help="degraded data")
+# parser.add_argument("--tarset", default="./data/test/deblur/target/", type=str, help="target data")
+# parser.add_argument("--save", default="./results/deblur/OUT/", type=str, help="savepath, Default: results")
+# parser.add_argument("--savetar", default="./results/deblur/TAR/", type=str, help="savepath, Default: targets")
+
+parser.add_argument("--model", default="./checkpoint/model_allBaryNet__61_1.0_5D.pt", type=str, help="model path")
+
+parser.add_argument("--gpus", default="0", type=str, help="gpu ids")
 
 def PSNR(pred, gt, shave_border=0):
     height, width = pred.shape[:2]
