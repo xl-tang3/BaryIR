@@ -117,8 +117,7 @@ The testing data should be placed in the ```test``` directory wherein each task 
 ```
 
 ##  Pretrained weights for 3- and 5-degradation benchmarks
-We provide the 3D/5D [Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=sharing) based on the Restormer backbone.
-
+We provide the 3D/5D [Pretrained Weights](https://drive.google.com/drive/folders/1OyGS4UNvLcVPmHPAKwkVw6ryBm9mRIuU?usp=sharing) based on the Restormer backbone. Please ensure the data and test configurations are consistent.
 
 ## Inference
 ```
@@ -142,17 +141,17 @@ python trainer_bary.py --batchSize=3 --nEpochs=57 --pairnum=10000000 --Sigma=100
 ```
 ### DDP (5D as an example)
 ```
-CUDA_VISIBLE_DEVICES=0,1,2 torchrun \
-  --nproc_per_node=3 \
+CUDA_VISIBLE_DEVICES=0,1 torchrun \
+  --nproc_per_node=2 \
   --master_port=9833 \
   trainer_bary_ddp.py \
   --batchSize=3 \
-  --nEpochs=65 \
+  --nEpochs=61 \
   --pairnum=10000000 \
   --Sigma=10000 \
   --sigma=1 \
   --de_type derain dehaze deblur denoise_25 lowlight \
-  --patch_size=144 \
+  --patch_size=128 \
   --type all \
   --backbone=BaryNet \
   --step=35 \
